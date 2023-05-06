@@ -1,7 +1,7 @@
 import os
 
 # Set an environment variable
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = 'MY_KEY'
 
 # Print the environment variable
 print(os.environ['OPENAI_API_KEY'])  # Output: 'my_value'

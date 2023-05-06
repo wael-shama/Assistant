@@ -60,11 +60,6 @@ command -> whisper "appointment.mp3"
 
 pip install openai
 
-
-# API KEY FOR OPENAI
-
-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
-
 Get One here in Developers:
 https://openai.com/
 API Reference

@@ -2,10 +2,10 @@
 My First Assistant
 """
 
-import openai
+import openaiMain
 import whisperai
 
-openai.api_key = "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"
+openaiMain.api_key = "MY_OPEN_API_KEY"
 
 # Example input text
 input_text = "Is Israel exists?"
@@ -14,7 +14,7 @@ input_text = "Is Israel exists?"
 response = whisperai.predict(input_text)
 
 # Use response to generate output text using ChatGPT
-output_text = openai.Completion.create(
+output_text = openaiMain.Completion.create(
     engine="davinci",
     prompt=response,
     max_tokens=50,
