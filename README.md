@@ -75,7 +75,7 @@ pip3 install torch numpy
 
 
 
-# Libraries
+# Spotify
 
 pip3 install SpeechRecognition
 
