@@ -1,6 +1,8 @@
 import openai
 import os
 
+# This is Working!! 
+
 # Set the OpenAI API key
 print(os.environ['OPENAI_API_KEY'])
 openai.api_key = os.environ['OPENAI_API_KEY']

@@ -1,5 +1,6 @@
 import os
 import openai
+import config
 from whisper import whisper
 
 class Assistant:
@@ -35,7 +36,7 @@ class Assistant:
 
 # Set the paths to the Whisper model and OpenAI API key
 whisper_model_path = '/path/to/whisper/model'
-openai_api_key = 'your_api_key'
+openai_api_key = os.environ['']
 
 # Initialize the assistant
 assistant = Assistant(whisper_model_path, openai_api_key)
