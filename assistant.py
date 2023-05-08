@@ -1,7 +1,7 @@
 import os
 import openai
 import config
-from whisper import whisper
+import whisper
 
 class Assistant:
     def __init__(self, whisper_model, openai_api_key):
@@ -11,10 +11,12 @@ class Assistant:
         self.openai = None
 
     def load_whisper(self):
-        self.whisper = whisper.Whisper(self.whisper_model)
+        self.whisper = whisper.load_model(self.whisper_model)
 
-    def load_openai(self):
+    def load_openai(self, introduction=None):
         openai.api_key = self.openai_api_key
+        if introduction:
+            self.generate_text(introduction)
 
     def transcribe_audio(self, audio_file):
         if not self.whisper:
@@ -34,16 +36,21 @@ class Assistant:
         )
         return response.choices[0].text
 
+
 # Set the paths to the Whisper model and OpenAI API key
-whisper_model_path = '/path/to/whisper/model'
-openai_api_key = os.environ['']
+print(os.environ['OPENAI_API_KEY'])
+whisper_model = "base"
+openai_api_key = config.OPEN_API_KEY
 
 # Initialize the assistant
-assistant = Assistant(whisper_model_path, openai_api_key)
+assistant = Assistant(whisper_model, openai_api_key)
 
 # Transcribe an audio file
-transcribed_text = assistant.transcribe_audio('/path/to/audio_file.wav')
+transcribed_text = assistant.transcribe_audio('./audios/appointment.mp3')
 print('Transcribed text:', transcribed_text)
+
+# Only Text from response
+print('Transcribed text:', transcribed_text["text"])
 
 # Generate text using OpenAI's GPT-3
 generated_text = assistant.generate_text('Write a short story about a robot who falls in love with a human')
