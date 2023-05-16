@@ -139,3 +139,41 @@ a. After you create the credentials, download the JSON file containing the clien
 
 b. Save the file to a secure location on your computer.
 
+
+
+# Flask
+
+Install Flask
+
+pip3 install flask
+
+
+
+# Audio Input
+
+brew install portaudio
+pyaudio
+
+
+
+# FEELINGS LIBRARIES COMPARISON
+
+Certainly! Here's a comparison table of the four libraries I mentioned earlier:
+
+| Library | Features | Emotion Recognition | Speaker Diarization | Music Classification |
+|---------|----------|-------------------|---------------------|----------------------|
+| pyAudioAnalysis | Audio Analysis, Emotion Recognition, Speaker Diarization, Music Classification | Yes | Yes | Yes |
+| OpenSMILE | Feature Extraction, Audio Analysis, Emotion Recognition, Intonation Analysis | Yes | Yes | Yes |
+| librosa | Audio Analysis, Feature Extraction, Emotion Recognition | Yes | No | Yes |
+| deepspectrum | Audio Analysis, Deep Learning, Emotion Recognition, Sound Classification | Yes | No | Yes |
+
+Note that this table is not exhaustive, and there may be other libraries available that are better suited to your specific needs. I would recommend researching and experimenting with several libraries to determine which one is the best fit for your project.
+
+
+pip3 install pyttsx3
+
+
+
+# GOOGLE NLP CLOUD 
+
+pip3 install google-cloud-languagepip3 show google-cloud-language
