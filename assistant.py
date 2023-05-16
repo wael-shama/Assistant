@@ -38,7 +38,7 @@ class Assistant:
 
 
 # Set the paths to the Whisper model and OpenAI API key
-print(os.environ['OPENAI_API_KEY'])
+# print(os.environ['OPENAI_API_KEY'])
 whisper_model = "base"
 openai_api_key = config.OPEN_API_KEY
 
@@ -47,11 +47,13 @@ assistant = Assistant(whisper_model, openai_api_key)
 
 # Transcribe an audio file
 transcribed_text = assistant.transcribe_audio('./audios/appointment.mp3')
-print('Transcribed text:', transcribed_text)
+print('Transcribed text:', transcribed_text['text'])
 
 # Only Text from response
-print('Transcribed text:', transcribed_text["text"])
+# print('Transcribed text:', transcribed_text["text"])
 
 # Generate text using OpenAI's GPT-3
-generated_text = assistant.generate_text('Write a short story about a robot who falls in love with a human')
-print('Generated text:', generated_text)
+# generated_text = assistant.generate_text('Write a to do action for this conversation')
+generated = assistant.generate_text('This is Dr. Larrys office, Give me a summary and Write a calendar invitaton for this call: ' + transcribed_text['text'])
+
+print('Calendar Invitation: ', generated)
