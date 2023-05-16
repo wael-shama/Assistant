@@ -1,0 +1,191 @@
+/* Global Styles */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #3f51b5;
+  height: 60px;
+}
+
+nav li {
+  list-style: none;
+}
+
+.auth {
+  margin-right: 20px;
+}
+
+.g_id_signin {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3f51b5;
+  background-color: #fff;
+  border: 2px solid #3f51b5;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.g_id_signin:hover {
+  color: #fff;
+  background-color: #3f51b5;
+}
+
+/* Header Styles */
+header {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+header li {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+/* Section Styles */
+.features {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.features h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.feature {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.feature p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #3f51b5;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Button Styles */
+.btn {
+position: fixed;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+color: #fff;
+background-color: #3f51b5;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.btn:hover {
+background-color: #fff;
+color: #3f51b5;
+}
+
+button[type="submit"] {
+  background-color: #fff;
+  border: 2px solid #4285f4;
+  border-radius: 4px;
+  color: #4285f4;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button[type="submit"]:hover {
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.google-signin-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #757575;
+  border: 1px solid #dadce0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.google-signin-btn:hover {
+  background-color: #fafafa;
+}
+
+.google-signin-btn-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+.google-signin-btn-icon i {
+  font-size: 24px;
+}
+
+.google-signin-btn-text {
+  display: inline-block;
+  vertical-align: middle;
+}

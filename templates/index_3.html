@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assistant App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="google-signin-client_id" content="742643317604-tcskr8b6qcrn0g3j9oe8t63akccjva8u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+      function onSignIn(googleUser) {
+        // send the Google ID token to the backend for verification and create session
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/google-login');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            window.location.href = '/dashboard';
+          } else {
+            alert('Login failed. Please try again.');
+          }
+        };
+        xhr.send('id_token=' + id_token);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Assistant App</h1>
+      </div>
+      <div class="content">
+        <p>The Assistant App helps you stay organized and productive. Some of its functions include:</p>
+        <ul>
+          <li>Creating reminders with integrations with Spotify</li>
+          <li>Syncing Google Calendar meetings with others</li>
+          <li>Executing commands from speech</li>
+        </ul>
+        <div class="google-btn" data-onsuccess="onSignIn" data-theme="dark"></div>
+      </div>
+    </div>
+  </body>
+</html>

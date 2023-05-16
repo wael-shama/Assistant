@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Assistant App</title>
+    <meta name="google-signin-client_id" content="742643317604-tcskr8b6qcrn0g3j9oe8t63akccjva8u.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+            var id_token = googleUser.getAuthResponse().id_token;
+            $.ajax({
+                url: "/google-auth",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ id_token: id_token }),
+                success: function (response) {
+                    console.log(response);
+                    window.location.replace("/dashboard");
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Assistant App</h1>
+    <p>Welcome to Assistant App! Here are some of the things you can do:</p>
+    <ul>
+        <li>Make reminders with integrations with Spotify</li>
+        <li>Sync Google Calendar meeting with others</li>
+        <li>Execute commands from Speech</li>
+    </ul>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+</body>
+</html>

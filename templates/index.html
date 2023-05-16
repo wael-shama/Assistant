@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flask Google Sign In</title>
+  </head>
+  <body>
+    <h1>Flask Google Sign In</h1>
+    <div id="g_id_onload"
+         data-client_id="742643317604-tcskr8b6qcrn0g3j9oe8t63akccjva8u.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false"></div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="Sign in with Google"
+         data-shape="rectangular"
+         data-logo_alignment="left">
+    </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      function handleCredentialResponse(response) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/google-auth');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            // The user is authenticated, redirect to home page.
+            window.location.href = '/';
+          } else {
+            console.log('Unable to authenticate user: ' + xhr.responseText);
+          }
+        };
+        xhr.send('id_token=' + response.credential);
+      }
+    </script>
+  </body>
+</html>
+
+

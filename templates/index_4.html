@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Assistant App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="content">
+      <nav>
+        <form method="post" action="{{ url_for('login') }}">
+          <button type="submit">          
+            <span class="google-signin-btn-icon"><i class="fab fa-google"></i></span>
+            <span class="google-signin-btn-text">Sign in with Google</span>
+            <div class="g_id_signin"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="Sign in with Google"
+            data-shape="rectangular"
+            data-logo_alignment="left">
+            </div>
+          </button>
+          
+        </form>
+      </nav>
+      <header>
+        <h1>Welcome to Assistant App</h1>
+        <p>Here are some of the functions that we offer:</p>
+        <ul>
+          <li>Make reminders with integrations with Spotify</li>
+          <li>Sync Google calendar meetings with others</li>
+          <li>Execute commands from speech</li>
+        </ul>
+      </header>
+    </div>
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Reminders with Spotify Integration</h3>
+        <p>Make reminders for yourself with the added functionality of connecting to your Spotify account.</p>
+      </div>
+      <div class="feature">
+        <h3>Google Calendar Sync</h3>
+        <p>Sync your Google calendar meetings with others to stay on top of your schedule.</p>
+      </div>
+      <div class="feature">
+        <h3>Execute Commands from Speech</h3>
+        <p>Use speech commands to execute various actions in the app such as creating reminders and scheduling meetings.</p>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2023 Assistant App. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
