@@ -1,0 +1,59 @@
+# Speaker Diarization using Google Cloud Speech-to-Text and PyAudioAnalysis
+
+This Python script uses Google Cloud Speech-to-Text and PyAudioAnalysis to perform speaker diarization on an audio file.
+
+## Prerequisites
+
+To run this script, you will need to have the following installed:
+
+- Python 3.x
+- pip
+- virtualenv
+
+You will also need a Google Cloud Platform account with a project and a service account key that has access to the Cloud Speech-to-Text API.
+
+## Installation
+
+1. Clone this repository to your local machine:
+
+git clone https://github.com/yourusername/your-repository.git
+cd your-repository
+
+2. Create a virtual environment for this project:
+
+virtualenv venv
+source venv/bin/activate
+
+3. Install the required Python packages:
+
+pydub==0.25.1
+speechrecognition==3.8.1
+google-cloud-speech==2.7.0
+hmmlearn==0.2.5
+pyAudioAnalysis==0.3.7
+matplotlib==3.4.2
+
+4. Move the Google Cloud service account key to the project directory and rename it to `google-cloud-credentials.json`.
+
+## Usage
+
+To run the speaker diarization script, use the following command:
+
+`python speaker_diarization.py path/to/audio/file.wav`
+
+
+Replace `path/to/audio/file.wav` with the path to your audio file.
+
+The script will output the transcription for each audio segment and the total duration for each speaker.
+
+## Credits
+
+This script is based on the following open-source projects:
+
+- [Google Cloud Speech-to-Text API](https://cloud.google.com/speech-to-text)
+- [PyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis)
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
